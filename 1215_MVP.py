@@ -18,25 +18,30 @@ from rekishi_saki_module import *
 # ------------------------------
 # APIキーなどの設定
 # ------------------------------
-with open('Google_custom_search_api_key.txt', 'r', encoding='UTF-8') as file:
-    API_KEY = file.read()
+# with open('Google_custom_search_api_key.txt', 'r', encoding='UTF-8') as file:
+#     API_KEY = file.read()
+API_KEY = st.secrets["Google_custom_search"]["api_key"]
 # API_KEY = "xxx(あなたのAPIキー)xxx"
 
-with open('Google_search_ID.txt', 'r', encoding='UTF-8') as file:
-    SEARCH_ENGINE_ID = file.read()
+# with open('Google_search_ID.txt', 'r', encoding='UTF-8') as file:
+#     SEARCH_ENGINE_ID = file.read()
+SEARCH_ENGINE_ID = st.secrets["Google_search_ID"]["ID"]
 # SEARCH_ENGINE_ID = "xxx(あなたのAPIキー)xxx"
 
-with open('Google_map_api_key.txt', 'r', encoding='UTF-8') as file:
-    GOOGLE_API_KEY = file.read()
+# with open('Google_map_api_key.txt', 'r', encoding='UTF-8') as file:
+#     GOOGLE_API_KEY = file.read()
+GOOGLE_API_KEY = st.secrets["Google_map_api"]["api_key"]
 # GOOGLE_API_KEY = "xxx(あなたのAPIキー)xxx"
 gmaps = googlemaps.Client(key=GOOGLE_API_KEY) # Google Mapsクライアント
 
-with open('Rakuten_api_key.txt', 'r', encoding='UTF-8') as file:
-    RAKUTEN_API_KEY = file.read()
+# with open('Rakuten_api_key.txt', 'r', encoding='UTF-8') as file:
+#     RAKUTEN_API_KEY = file.read()
+RAKUTEN_API_KEY = st.secrets["Rakuten_api"]["api_key"]
 # RAKUTEN_API_KEY = "xxx(あなたのAPIキー)xxx"
 
-with open('OpenAI_key.txt', 'r', encoding='UTF-8') as file:
-    api_key = file.read()
+# with open('OpenAI_key.txt', 'r', encoding='UTF-8') as file:
+#     api_key = file.read()
+api_key = st.secrets["openai"]["api_key"]
 client = OpenAI(api_key=api_key)
 # os.environ["OPENAI_API_KEY"] = "xxx(あなたのAPIキー)xxx"
 # client = OpenAI() # OpenAIクライアント
